@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Welcome!{% endblock %}</title>
+    </head>
+    <body>
+        {% block body %}
+            <h2>Name: Popescu Aurelian Nicolae</h2>
+            <h2>Education:</h2>
+            {% for type, name in education  %}
+                <p>{{ type }} : {{ name }}</p>
+            {% endfor %}
+            <h2>Skills:</h2>
+            {% for skill in skills %}
+                {{ skill }}
+                {% if skills|last != skill %} , {% endif %}
+            {% endfor %}
+        {% endblock %}
+    </body>
+</html>
